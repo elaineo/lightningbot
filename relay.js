@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var app = express();
 app.set('port', process.env.PORT || 3000);
 
+
+
 // view engine setup
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,12 +18,20 @@ app.get('/', function(req, res) {
   res.sendStatus(200)
 });
 
-app.post('/', function(req, res) {
+
+var CREATE_SECRET = "`pxY,B7[xxCG$52uraiz5,.E5X$<X1&zUaXq9xl~h|5*XF^s#>";
+var UPDATE_SECRET = "$L&ttk] bHDG4o3wsLzrh,`Z!_`Jz@|cz0;pe4bu`DX&r[=u~z";
+
+app.post('/create', function(req, res) {
   console.log(req.body)
   res.sendStatus(200)
 });
 
-// error handlers
+app.post('/update', function(req, res) {
+  console.log(req.body)
+  res.sendStatus(200)
+});
+
 
 // development error handler
 // will print stacktrace
