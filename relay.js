@@ -23,13 +23,13 @@ app.get('/', function(req, res) {
 var Tweet = require('./tweet');
 
 app.post('/create', function(req, res) {
-  console.log("ORDER NUMBER: " + req.body.number);
+  console.log("ORDER CREATED: " + req.body.number);
   console.log(req.body.meta_data);
   res.sendStatus(200);
 });
 
 app.post('/update', function(req, res) {
-  console.log("ORDER NUMBER: " + req.body.number);
+  console.log("ORDER UPDATED: " + req.body.number);
   console.log(req.body.meta_data);
   var msgObj = req.body.meta_data.filter((x)=>(x.key==='tweet_text'));
   console.log(msgObj[0])

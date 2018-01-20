@@ -23,7 +23,7 @@ module.exports = function(msg) {
   console.log("### LightingBot: " + msg);
 
   client.post('statuses/update', 
-              { 'status': msg.substring(0,269) + DISCLOSURE }, 
+              { 'status': msg.substring(0,280) }, 
     function(error, data){
       if (error) 
         console.error(error);
