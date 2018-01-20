@@ -12,12 +12,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // client
 app.get('/', function(req, res) {
-  console.log(req)
+  console.log(req.body)
   res.sendStatus(200)
 });
 
 app.post('/', function(req, res) {
-  console.log(req)
+  console.log(req.body)
   res.sendStatus(200)
 });
 
