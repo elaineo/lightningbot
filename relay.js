@@ -29,11 +29,11 @@ app.post('/create', function(req, res) {
 });
 
 app.post('/update', function(req, res) {
-  console.log("ORDER UPDATED: " + req.body.number);
+  console.log("ORDER UPDATED: " + req.body.number + req.body.status);
   console.log(req.body.meta_data);
-  var msgObj = req.body.meta_data.filter((x)=>(x.key==='tweet_text'));
-  console.log(msgObj[0])
-  if(req.body.status==="completed") {
+  if(req.body.status==="processing") {
+      var msgObj = req.body.meta_data.filter((x)=>(x.key==='tweet_text'));
+      console.log(msgObj[0])
       Tweet(msgObj[0].value);
   }
   res.sendStatus(200);
