@@ -6,8 +6,6 @@ var bodyParser = require('body-parser');
 var app = express();
 app.set('port', process.env.PORT || 3000);
 
-
-
 // view engine setup
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,17 +17,26 @@ app.get('/', function(req, res) {
 });
 
 
-var CREATE_SECRET = "`pxY,B7[xxCG$52uraiz5,.E5X$<X1&zUaXq9xl~h|5*XF^s#>";
-var UPDATE_SECRET = "$L&ttk] bHDG4o3wsLzrh,`Z!_`Jz@|cz0;pe4bu`DX&r[=u~z";
+// var CREATE_SECRET = "`pxY,B7[xxCG$52uraiz5,.E5X$<X1&zUaXq9xl~h|5*XF^s#>";
+// var UPDATE_SECRET = "$L&ttk] bHDG4o3wsLzrh,`Z!_`Jz@|cz0;pe4bu`DX&r[=u~z";
+
+var Tweet = require('./tweet');
 
 app.post('/create', function(req, res) {
-  console.log(req.body)
-  res.sendStatus(200)
+  console.log("ORDER NUMBER: " + req.body.number);
+  console.log(req.body.meta_data);
+  res.sendStatus(200);
 });
 
 app.post('/update', function(req, res) {
-  console.log(req.body)
-  res.sendStatus(200)
+  console.log("ORDER NUMBER: " + req.body.number);
+  console.log(req.body.meta_data);
+  var msgObj = req.body.meta_data.filter((x)=>(x.key==='tweet_text'));
+  console.log(msgObj[0])
+  if(req.body.status==="completed") {
+      Tweet(msgObj[0].value);
+  }
+  res.sendStatus(200);
 });
 
 
