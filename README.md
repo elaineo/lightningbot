@@ -17,9 +17,12 @@ Download the Lightning Payments plugin here: https://github.com/ElementsProject/
 
 ### Get a Lightning node set up
 
-https://github.com/ElementsProject/lightning-charge
+Set up bitcoind, c-lightning, and lightning-charge. 
+Instructions for all that stuff here: https://github.com/ElementsProject/lightning-charge#getting-started
 
 ### Create a Twitter account
+
+Go to https://apps.twitter.com/. Create a new app, and copy the API keys.
 
 ### Connect your WooCommerce payments to the Twitter bot
 
