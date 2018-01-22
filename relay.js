@@ -16,10 +16,6 @@ app.get('/', function(req, res) {
   res.sendStatus(200)
 });
 
-
-// var CREATE_SECRET = "`pxY,B7[xxCG$52uraiz5,.E5X$<X1&zUaXq9xl~h|5*XF^s#>";
-// var UPDATE_SECRET = "$L&ttk] bHDG4o3wsLzrh,`Z!_`Jz@|cz0;pe4bu`DX&r[=u~z";
-
 var Tweet = require('./tweet');
 
 app.post('/create', function(req, res) {
