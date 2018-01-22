@@ -9,10 +9,20 @@ OR, create a free self-hosted Wordpress site with https://wordpress.org
 
 #### Install WooCommerce and Lightning Payments plugins
 
+The WooCommerce plugin is hosted in Wordpress.
+
+<img src="https://raw.githubusercontent.com/elaineo/lightningbot/master/docs/wp_plugins.png" width="400">
+
+Download the Lightning Payments plugin here: https://github.com/ElementsProject/woocommerce-gateway-lightning/releases/tag/v0.1.5
+
 ### Get a Lightning node set up
 
-https://github.com/ElementsProject/lightning-charge
+Set up bitcoind, c-lightning, and lightning-charge. 
+Instructions for all that stuff here: https://github.com/ElementsProject/lightning-charge#getting-started
 
 ### Create a Twitter account
 
+Go to https://apps.twitter.com/. Create a new app, and copy the API keys.
+
 ### Connect your WooCommerce payments to the Twitter bot
+
