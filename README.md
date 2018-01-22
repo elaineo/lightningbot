@@ -9,7 +9,11 @@ OR, create a free self-hosted Wordpress site with https://wordpress.org
 
 #### Install WooCommerce and Lightning Payments plugins
 
+The WooCommerce plugin is hosted in Wordpress.
+
 <img src="https://raw.githubusercontent.com/elaineo/lightningbot/master/docs/wp_plugins.png" width="400">
+
+Download the Lightning Payments plugin here: https://github.com/ElementsProject/woocommerce-gateway-lightning/releases/tag/v0.1.5
 
 ### Get a Lightning node set up
 
