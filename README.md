@@ -22,12 +22,32 @@ Follow the instructions on the Woocommerce-Gateway repo to add Lightning as a pa
 Set up bitcoind, c-lightning, and lightning-charge. 
 Instructions for all that stuff here: https://github.com/ElementsProject/lightning-charge#getting-started
 
-### Create a Twitter account
+### Set up a Twitter bot
 
+#### Create a Twitter account
+
+Go through the usual account creation process. You will need to add a mobile number to use the API.
 Go to https://apps.twitter.com/. Create a new app, and copy the API keys.
+
+#### Set up the Lightning-Twitter relay
+
+That's this repository here.
+```
+git clone https://github.com/elaineo/lightningbot
+cd lightningbot
+npm install
+```
+
+Add Twitter API keys to environment variables.
+
+Run the relay: 
+``` 
+$ node relay.js
+```
 
 ### Connect your WooCommerce payments to the Twitter bot
 
+Create two new webhooks: One for order creation, and one for order updates.
+
 <img src="https://github.com/elaineo/lightningbot/blob/master/docs/woocommerce.png" width="400">
 
-#### Set up the Twitter bot
