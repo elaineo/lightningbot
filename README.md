@@ -13,7 +13,9 @@ The WooCommerce plugin is hosted in Wordpress.
 
 <img src="https://raw.githubusercontent.com/elaineo/lightningbot/master/docs/wp_plugins.png" width="400">
 
-Download the Lightning Payments plugin here: https://github.com/ElementsProject/woocommerce-gateway-lightning/releases/tag/v0.1.5
+Download the Lightning Payments plugin here: https://github.com/ElementsProject/woocommerce-gateway-lightning
+
+Follow the instructions on the Woocommerce-Gateway repo to add Lightning as a payment option on your WooCommerce site.
 
 ### Get a Lightning node set up
 
@@ -26,3 +28,6 @@ Go to https://apps.twitter.com/. Create a new app, and copy the API keys.
 
 ### Connect your WooCommerce payments to the Twitter bot
 
+<img src="https://github.com/elaineo/lightningbot/blob/master/docs/woocommerce.png" width="400">
+
+#### Set up the Twitter bot
