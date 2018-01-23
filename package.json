@@ -1,10 +1,10 @@
 {
   "name": "LightningBot",
-  "private": false,
   "version": "0.1.0",
   "repository": "https://github.com/elaineo/lightningbot",
   "license": "MIT",
   "scripts": {
+    "start": "bin/start.sh"
   },
   "dependencies": {
     "body-parser": "^1.12.2",
