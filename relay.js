@@ -28,9 +28,21 @@ app.post('/update', function(req, res) {
   console.log("ORDER UPDATED: " + req.body.number + req.body.status);
   console.log(req.body.meta_data);
   if(req.body.status==="processing") {
-      var msgObj = req.body.meta_data.filter((x)=>(x.key==='tweet_text'));
-      console.log(msgObj[0])
-      Tweet(msgObj[0].value);
+    for (var o of req.body.line_items) {
+      if (o.sku==="001") {
+        // Retweet
+        var msgObj = req.body.meta_data.filter((x)=>(x.key==='tweet_rt'));
+        Tweet.retweet(msgObj[0].value);
+      } else if (o.sku==="002") {
+        // Like
+        var msgObj = req.body.meta_data.filter((x)=>(x.key==='tweet_like'));
+        Tweet.liketweet(msgObj[0].value);
+      } else if (o.sku==="003") {
+        // Tweet text
+        var msgObj = req.body.meta_data.filter((x)=>(x.key==='tweet_text'));
+        Tweet.message(msgObj[0].value);
+      }
+    }
   }
   res.sendStatus(200);
 });
