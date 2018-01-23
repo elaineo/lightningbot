@@ -17,6 +17,10 @@ Download the Lightning Payments plugin here: https://github.com/ElementsProject/
 
 Follow the instructions on the Woocommerce-Gateway repo to add Lightning as a payment option on your WooCommerce site.
 
+#### Add a Product to your store
+
+<img src="https://github.com/elaineo/lightningbot/blob/master/docs/product.png" width="400">
+
 ### Get a Lightning node set up
 
 Set up bitcoind, c-lightning, and lightning-charge. 
@@ -50,4 +54,10 @@ $ node relay.js
 Create two new webhooks: One for order creation, and one for order updates.
 
 <img src="https://github.com/elaineo/lightningbot/blob/master/docs/woocommerce.png" width="400">
+
+Fill in your own server URL in the webhooks. The endpoints should go to `/create` and `/update`.
+
+<img src="https://github.com/elaineo/lightningbot/blob/master/docs/webhook.png" width="300">
+
+That's it! Now people can buy tweets from your bot!
 
