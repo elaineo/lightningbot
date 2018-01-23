@@ -42,11 +42,11 @@ cd lightningbot
 npm install
 ```
 
-Add Twitter API keys to environment variables.
+Add Twitter API keys to environment variables in the `.env` file.
 
 Run the relay: 
 ``` 
-$ node relay.js
+npm run start 
 ```
 
 ### Connect your WooCommerce payments to the Twitter bot
