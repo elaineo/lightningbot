@@ -55,7 +55,7 @@ Create two new webhooks: One for order creation, and one for order updates.
 
 <img src="https://github.com/elaineo/lightningbot/blob/master/docs/woocommerce.png" width="400">
 
-Fill in your own server URL in the webhooks. The endpoints should go to `/create` and `/update`.
+Fill in your own server URL in the webhooks. The endpoints should go to `/create` and `/update`. Make sure the port number matches the one set in `.env`.
 
 <img src="https://github.com/elaineo/lightningbot/blob/master/docs/webhook.png" width="300">
 
