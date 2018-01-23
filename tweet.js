@@ -13,8 +13,8 @@ var client = new Twitter({
   access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
-module.exports = function(msg) {
-  console.log("### LightingBot: " + msg);
+var message = function(msg) {
+  console.log("### LightingBot Tweet: " + msg);
 
   client.post('statuses/update', 
               { 'status': msg.substring(0,280) }, 
@@ -25,4 +25,62 @@ module.exports = function(msg) {
         console.log(data);
       }
     });
+}
+
+var retweet = function(msg) {
+  console.log("### LightingBot Retweet: " + msg);
+  var tweet = msg.match(/\d+$/);
+
+  if (tweet) {
+
+    client.post('statuses/retweet', 
+                { 'id': tweet[0] }, 
+      function(error, data){
+        if (error) 
+          console.error(error);
+        else {
+          console.log(data);
+        }
+      });
+  }
+}
+
+var liketweet = function(msg) {
+  console.log("### LightingBot Retweet: " + msg);
+  var tweet = msg.match(/\d+$/);
+
+  if (tweet) {
+
+    client.post('favorites/create', 
+                { 'id': tweet[0] }, 
+      function(error, data){
+        if (error) 
+          console.error(error);
+        else {
+          console.log(data);
+        }
+      });
+  }
+}
+
+var follow = function(name) {
+  console.log("### LightingBot Follow: " + name);
+  var screen_name = name[0] === '@' ? name.substring(1) : name;
+  client.post('friendships/create', 
+              { 'screen_name': screen_name }, 
+    function(error, data){
+      if (error) 
+        console.error(error);
+      else {
+        console.log(data);
+      }
+    });
+}
+
+
+module.exports = {
+  message,
+  retweet,
+  liketweet,
+  follow
 }
